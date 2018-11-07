@@ -1,0 +1,125 @@
+.nav {
+  position: relative;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  font-family: $oswald;
+  padding: .5rem 1rem;
+  background: $charcoal;
+
+  &, &__section, &__item, &__link, &__collapsable {
+    display: flex;
+  }
+
+  &__collapsable {
+    flex-basis: auto;
+    flex-grow: 1;
+  }
+
+  &__section {
+    list-style: none;
+
+    &:nth-child(1) {
+      margin-right: auto;
+    }
+  }
+
+  &__link {
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    color: #fff;
+
+    &:before {
+      content: '';
+      position: absolute;
+      height: 2px;
+      width: 100%;
+      background-color: #fff;
+      bottom: 0;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .5s ease-in-out;
+    }
+
+    &:hover, &--current {
+      &:before {
+        transform: scaleX(1);
+      }
+    }
+
+    &--white-border {
+      min-width: 37px;
+      border: 1px solid #fff;
+      padding: 1rem;
+
+      &:hover {
+        background-color: #fff;
+        color: $charcoal;
+      }
+
+      &:before {
+        content: none;
+      }
+
+      i {
+        margin: auto;
+      }
+    }
+
+    &--logo {
+      padding: .5rem 1rem;
+    }
+  }
+
+  &__toggler {
+    color: #fff;
+    padding: 1.5rem 1.5rem;
+  }
+
+  &--fixed {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  @include createBreakpoint('small') {
+    &__link--logo > img {
+      max-width: 50%;
+    }
+
+    &__collapsable {
+      flex-basis: 100%;
+      flex-direction: column-reverse;
+      display: none;
+
+      &--show {
+        display: flex;
+      }
+    }
+
+    &__section {
+      list-style: none;
+      flex-direction: column;
+      padding-left: 0;
+      margin-bottom: 0;
+
+      &:nth-child(2) {
+        justify-content: center;
+        flex-direction: row;
+      }
+    }
+  }
+
+  @include createBreakpoint('large') {
+    &__toggler {
+      display: none;
+    }
+  }
+}

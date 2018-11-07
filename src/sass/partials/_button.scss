@@ -1,0 +1,30 @@
+.btn {
+  font-family: $oswald;
+  padding: .6rem 1.2rem;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  font-size: 1.6rem;
+  font-weight: 300;
+  line-height: 1.5;
+  background-color: $commongrey;
+  white-space: nowrap;
+  text-align: center;
+  display: inline-block;
+
+  &--large {
+    padding: .8rem 1.6rem;
+    font-size: 2rem;
+    line-height: 1.5;
+  }
+
+  &--white-bordered {
+    border: 1px solid #fff;
+  }
+
+  &--green {
+    color: #fff;
+    background-color: $green;
+  }
+}

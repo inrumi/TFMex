@@ -1,0 +1,30 @@
+// Layout
+@import 'partials/variables';
+@import 'partials/normalize';
+@import 'partials/typography';
+@import 'partials/breakpoints';
+@import 'partials/grid';
+@import 'partials/layout';
+@import 'partials/helpers';
+
+// Elements
+@import 'partials/nav';
+@import 'partials/button';
+@import 'partials/carousel';
+@import 'partials/slider';
+@import 'partials/card';
+@import 'partials/button';
+@import 'partials/form';
+@import 'partials/hero';
+@import 'partials/panel';
+@import 'partials/table';
+
+// Effects
+@import 'partials/apollo';
+
+// Plugins
+@import '~baguettebox.js/src/baguetteBox';
+@import '~tiny-slider/src/tiny-slider.scss';
+
+// Elements per site
+@import 'partials/convocatoria';

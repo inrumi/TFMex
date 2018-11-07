@@ -1,0 +1,89 @@
+.convocatoria {
+  font-family: $oswald;
+  font-weight: 300;
+
+  &__img {
+    position: relative;
+  }
+
+  &__info {
+    color: #fff;
+
+    p {
+      margin-top: 0;
+      margin-bottom: .5rem;
+
+      &:last-child {
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    a {
+      margin: 1rem
+    }
+  }
+
+  &__menu {
+    span {
+      font-weight: 300;
+    }
+
+    ul {
+      display: flex;
+      list-style: none;
+      padding: 0;
+
+      li {
+        text-align: center;
+        font-size: 2rem;
+        font-family: $oswald;
+        font-weight: 300;
+        color: inherit;
+        padding-left: 1.6rem;
+        padding-right: 1.6rem;
+        line-height: 1.2;
+        outline: none;
+
+        &:first-child {
+          padding-left: 0;
+        }
+
+        &:hover {
+          color: $red;
+        }
+      }
+    }
+  }
+
+  &__link-container {
+    list-style: none;
+    display: flex;
+  }
+
+  @include createBreakpoint('small') {
+    &__menu {
+
+      ul > li {
+        text-align: center;
+        font-size: 1.6rem;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    .row {
+      flex-direction: column;
+    }
+
+    &__info {
+      text-align: center;
+    }
+
+    &__img {
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+}

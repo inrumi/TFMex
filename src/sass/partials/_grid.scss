@@ -1,0 +1,151 @@
+.content {
+  max-width: 96rem;
+  margin: 0 auto;
+  padding: 2rem;
+
+  @include createBreakpoint('small') {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+.row {
+  $g: &;
+  display: flex;
+  flex-wrap: wrap;
+
+  &--with-gutters {
+    margin-left: -1rem;
+    margin-right: -1rem;
+
+    & > .column {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  &--top {
+    align-items: flex-start;
+  }
+
+  &--middle {
+    align-items: center;
+  }
+
+  &--bottom {
+    align-items: flex-end;
+  }
+
+  &--center {
+    justify-content: center;
+  }
+
+  &--left {
+    justify-content: left;
+  }
+
+  &--right {
+    justify-content: right;
+  }
+}
+
+.column {
+  flex: 1;
+
+  &--top {
+    align-self: flex-start;
+  }
+
+  &--middle {
+    align-self: center;
+  }
+
+  &--top {
+    align-self: flex-end;
+  }
+
+  &--full {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 100%;
+  }
+
+  &--half {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+  }
+
+  &--third {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 33.3%;
+  }
+
+  &--fourth {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 25%;
+  }
+}
+
+@mixin createGridSizes($name: '') {
+  $separator: '-';
+  @if ($name == '') {
+    $separator: ''
+  }
+;
+
+  .row--#{$name}#{$separator}fit > .column {
+    flex: 1;
+  }
+
+  .row--#{$name}#{$separator}full > .column {
+    flex: 0 0 100%;
+  }
+
+  .row--#{$name}#{$separator}three-quarters > .column {
+    flex: 0 0 50%;
+  }
+
+  .row--#{$name}#{$separator}halfs > .column {
+    flex: 0 0 50%;
+  }
+
+  .row--#{$name}#{$separator}thirds > .column {
+    flex: 0 0 33.3%;
+  }
+
+  .row--#{$name}#{$separator}quarters > .column {
+    flex: 0 0 25%;
+  }
+
+  .column--#{$name}#{$separator}full {
+    flex: 0 0 100%;
+  }
+
+  .column--#{$name}#{$separator}three-quarters {
+    flex: 0 0 75%;
+  }
+
+  .column--#{$name}#{$separator}half {
+    flex: 0 0 50%;
+  }
+
+  .column--#{$name}#{$separator}third {
+    flex: 0 0 33.3%;
+  }
+
+  .column--#{$name}#{$separator}quarter {
+    flex: 0 0 25%;
+  }
+}
+
+@include createGridSizes();
+
+@each $breakpoint in $breakpoints {
+  $name: nth($breakpoint, 2);
+  @include createBreakpoint($name) {
+    @include createGridSizes($name)
+  }
+}

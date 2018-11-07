@@ -1,0 +1,33 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+.centered {
+  text-align: center;
+}
+
+.righted {
+  text-align: right;
+}
+
+dl {
+  dt {
+    font-weight: 700;
+  }
+
+  &.horizontal {
+    dd {
+      margin-left: 0;
+      margin-bottom: .5rem;
+    }
+  }
+}

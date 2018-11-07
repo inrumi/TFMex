@@ -1,0 +1,14 @@
+.sliders {
+  display: flex;
+  flex-direction: column;
+
+  &__title, &__content {
+    text-align: center;
+  }
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

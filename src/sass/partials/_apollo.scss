@@ -1,0 +1,72 @@
+.apollo {
+  $this: &;
+  position: relative;
+  height: 26rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  font-family: $oswald;
+  font-weight: 300;
+  background-color: $charcoal;
+
+  &:hover {
+
+    img {
+      opacity: .2;
+    }
+
+    #{$this}__content {
+      p {
+        transform: translateX(0);
+      }
+
+      &:before {
+        transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, 110%, 0);
+      }
+    }
+  }
+
+  img {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: .8;
+    transition: opacity 0.35s, transform 0.35s ease-in-out;
+  }
+
+  &__content {
+    position: absolute;
+    padding: 2rem;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    color: #fff;
+    overflow: hidden;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.5);
+      transition: transform 0.6s ease-in-out;
+      transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 45deg) translate3d(0, -110%, 0);
+    }
+
+    p {
+      position: absolute;
+      bottom: 1rem;
+      right: 2rem;
+      padding-right: 1rem;
+      padding-left: 1rem;
+      border-right: 4px solid #fff;
+      text-align: right;
+      word-break: break-all;
+      transform: translateX(120%);
+      transition: transform .35s ease-in-out;
+    }
+  }
+}

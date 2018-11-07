@@ -1,0 +1,43 @@
+.table {
+  border-collapse: collapse;
+
+  td, th {
+    padding: .48rem;
+  }
+
+  &--prices {
+    font-family: $oswald;
+    font-size: 1.8rem;
+
+    tr:last-child {
+      th, td {
+        font-size: 2.4rem;
+        font-weight: 500;
+        border-top: .2rem solid $commongrey;
+      }
+
+      td {
+        color: $green;
+      }
+    }
+
+    th {
+      font-weight: 500;
+      text-align:left;
+    }
+
+    td {
+      font-weight: 300;
+      text-align: right;
+    }
+
+    @include createBreakpoint('small') {
+      margin-top: 2rem !important;
+      width: 100%;
+    }
+  }
+
+  &--righted {
+    margin: auto 0 auto auto;
+  }
+}

@@ -1,0 +1,133 @@
+.form {
+  padding: 1rem 0;
+
+  &--small {
+    width: 680px;
+  }
+
+  &--centered {
+    margin: auto;
+  }
+
+  .form__item {
+    position: relative;
+    display: flex;
+    flex-grow: 1;
+    flex-shrink: 1;
+    height: 2.6rem;
+    margin-bottom: 2rem;
+
+    &--focused {
+      select {
+        color: #000 !important;
+
+        + i {
+          transform: translateY(-40%) rotate(180deg) !important;
+        }
+      }
+
+      .form__label {
+        transform: scale(.6) translateY(-3rem);
+      }
+      .form__border--focus {
+        transform: scaleX(1);
+      }
+    }
+
+    input:not([type='submit']):not([type="radio"]):not([type="checkbox"]) {
+      flex-grow: 1;
+      flex-shrink: 1;
+      background-color: transparent;
+      border: none;
+      display: block;
+      font-family: $oswald;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: normal;
+      margin: 0;
+      padding: 0;
+      min-width: 0;
+      outline: none;
+
+      &:focus, &:active {
+        + .form__label {
+          transform: scale(.6) translateY(-3rem);
+        }
+        ~ .form__border--focus {
+          transform: scaleX(1);
+        }
+      }
+    }
+
+    select {
+      position: relative;
+      width: 100%;
+      border: none;
+      box-shadow: none;
+      background: transparent;
+      background-image: none;
+      -webkit-appearance: none;
+      font-family: Oswald,sans-serif;
+      font-weight: 500;
+      font-size: 2rem;
+      margin: 0;
+      min-width: 0;
+      outline: none;
+      color: rgba(0,0,0,.38);
+      transition: color .3s ease-in;
+
+      + i {
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%) rotate(0);
+        transform-origin: 60% 60%;
+        transition: transform 1s ease;
+      }
+    }
+  }
+
+  &__label {
+    position: absolute;
+    bottom: 1px;
+    left: 0;
+    width: 100%;
+    font-weight: 500;
+    font-size: 2rem;
+    font-family: $oswald;
+    color: rgba(0, 0, 0, 0.38);
+    transform-origin: left;
+    transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition-property: transform;
+    pointer-events: none;
+  }
+
+  &__border, &__border--focus {
+    background-color: rgba(0, 0, 0, 0.12);
+    bottom: -3px;
+    height: 2px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  &__border--focus {
+    content: "";
+    transform: scaleX(0);
+    background-color: $charcoal;
+    transform-origin: left;
+    transition: transform .3s cubic-bezier(0.4,0,0.2,1)
+  }
+
+  &--small {
+    width: 680px;
+  }
+
+  @include createBreakpoint('small') {
+    &--small {
+      width: auto;
+    }
+  }
+}

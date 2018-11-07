@@ -1,0 +1,50 @@
+main {
+  min-height: 60rem;
+  color: #7C7C7C;
+}
+
+.footer {
+  background-color: $charcoal;
+  font-family: $oswald;
+  font-weight: 300;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  color: #fff;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: .5rem 0;
+
+    li {
+      color: $commongrey;
+      margin-bottom: 1rem;
+    }
+  }
+
+  h3 {
+    margin: 1rem 0;
+  }
+
+  a {
+    color: $commongrey;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  i {
+    color: $green;
+  }
+
+  @include createBreakpoint('small') {
+    & > .row:first-child {
+      flex-direction: column-reverse;
+
+      & > div:first-child {
+        text-align: center;
+      }
+    }
+  }
+}

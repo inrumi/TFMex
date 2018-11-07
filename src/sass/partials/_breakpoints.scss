@@ -1,0 +1,11 @@
+@mixin createBreakpoint($point) {
+  @each $breakpoint in $breakpoints {
+    $query: nth($breakpoint, 1);
+    $name: nth($breakpoint, 2);
+    @if ($name == $point) {
+      @media #{$query} {
+        @content
+      }
+    }
+  }
+}

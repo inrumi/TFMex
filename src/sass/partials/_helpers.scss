@@ -1,0 +1,65 @@
+.has-grey-background {
+  background-color: #f4f4f4;
+}
+
+.has-green-background {
+  background-color: $green;
+}
+
+.has-white-background {
+  background-color: #fff;
+}
+
+.has-charcoal-background {
+  background-color: $charcoal;
+}
+
+.is-grey {
+  color: $commongrey;
+}
+
+.is-white {
+  color: #fff;
+}
+
+.vertical-space {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.small-vertical-space {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.horizontal-space {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+.show-more {
+  text-align: center;
+
+  h3 {
+    margin-bottom: 0;
+  }
+}
+
+.title {
+  margin: 0;
+  padding-top: 4rem;
+  padding-bottom: 2rem;
+}
+
+.oswald {
+  font-family: $oswald;
+  font-weight: 300;
+}
+
+.pago--selected {
+  border-left: .4rem solid $red;
+}
+
+.hidden {
+  display: none;
+}
